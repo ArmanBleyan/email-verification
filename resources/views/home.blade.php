@@ -32,6 +32,9 @@
             <div class="col-md-8" id="messages">
 
             </div>
+
+            <a class = "btn btn-success" href = "{{route('export_user_pdf')}}">Export PDF</a>
+
         </div>
     </div>
 @endsection

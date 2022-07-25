@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Pusher\Pusher;
 use App\Jobs\SendEmailJob;
 
+
 class HomeController extends Controller
 {
     /**
@@ -54,13 +55,6 @@ class HomeController extends Controller
 
     public function sendMessage(Request $request)
     {
-
-        // $details=[
-        //     "email"=>"armbleyan@gmail.com",
-        // ];
-
-        // $sender = dispatch(new SendEmailJob($sender));
-
         $from = Auth::id();
         $to = $request->receiver_id;
         $message = $request->message;
@@ -90,4 +84,5 @@ class HomeController extends Controller
         $pusher->trigger('my-channel', 'my-event', $data);
 
     }
+
 }

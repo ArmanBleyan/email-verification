@@ -23,6 +23,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('export_user_pdf', [App\Http\Controllers\PDFController::class, 'export_user_pdf'])->name('export_user_pdf');
+
 Route::get('/message/{id}', [App\Http\Controllers\HomeController::class, 'getMessage'])->name('message');
 
 Route::post('message', [App\Http\Controllers\HomeController::class, 'sendMessage']);
